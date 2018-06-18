@@ -1,7 +1,9 @@
-package com.example.tiagoc.carros;
+package com.example.tiagoc.carros.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.tiagoc.carros.R;
 
 public class DetailsActivity extends AppCompatActivity {
 

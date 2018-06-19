@@ -28,12 +28,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CarMock carMock = new CarMock();
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
+        CarMock carMock = new CarMock(this);
         List<Car> carlist = new ArrayList<>();
         carlist.addAll(carMock.getList());
 
         // passo 1 de 3 criar Recycler view - obte-la
         this.mViewHolder.recyclerCars = (RecyclerView) findViewById(R.id.recycler_cars);
+
         OnListClickInterectionListener listener = new OnListClickInterectionListener() {
             @Override
             public void onClick(int id) {
@@ -45,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        }
+        };
 
 
         // passo 1 de 3 criar Recycler view - Criar Adapter

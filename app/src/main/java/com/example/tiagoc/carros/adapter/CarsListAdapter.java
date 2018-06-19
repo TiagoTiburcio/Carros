@@ -41,7 +41,7 @@ public class CarsListAdapter extends RecyclerView.Adapter<CarViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull CarViewHolder holder, int position) {
         Car car = this.mListCars.get(position);
-        holder.bindData(car);
+        holder.bindData(car, this.mOnListClickInterectionListener);
     }
 
     @Override

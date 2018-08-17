@@ -27,17 +27,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        }
         CarMock carMock = new CarMock(this);
-        List<Car> carlist = new ArrayList<>();
-        carlist.addAll(carMock.getList());
+        List<Car> carlist = new ArrayList<>(carMock.getList());
 
         // passo 1 de 3 criar Recycler view - obte-la
-        this.mViewHolder.recyclerCars = (RecyclerView) findViewById(R.id.recycler_cars);
+        this.mViewHolder.recyclerCars = findViewById(R.id.recycler_cars);
 
         OnListClickInterectionListener listener = new OnListClickInterectionListener() {
             @Override

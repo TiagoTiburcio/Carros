@@ -51,11 +51,10 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-
-        // passo 1 de 3 criar Recycler view - Criar Adapter
+        // passo 2 de 3 criar Recycler view - Criar Adapter
         CarsListAdapter carsListAdapter = new CarsListAdapter(carlist, listener);
         this.mViewHolder.recyclerCars.setAdapter(carsListAdapter);
-        // passo 1 de 3 criar Recycler view - Definir Layout
+        // passo 3 de 3 criar Recycler view - Definir Layout
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         this.mViewHolder.recyclerCars.setLayoutManager(linearLayoutManager);
     }
